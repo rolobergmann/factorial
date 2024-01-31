@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script>
+        var miArray = [3, 1, 5, 6];
+        console.log("Elemento pos 2: " + miArray[2]);
+
+        //var alumnos = ["Felipe", "Carlos", "Lorena", "Nicolás", "Darwin", "Angélica"];
+        //var alumnos = new Array();
+
+        var alumno1 = {
+            nombre: "Carlos",
+            apellido: "Perales",
+            hobbie: "Aprender JS"
+        };
+
+        var alumno2 = {
+            nombre: "Alexander",
+            apellido: "Beck",
+            hobbie: "Enseñar JS y hacer sufrir a los alumnos"
+        };
+
+        var alumnos = new Array()
+
+        alumnos.push(alumno1);
+        alumnos.push(alumno2);
+
+        /*
+
+        alumnos = [
+            {
+                nombre: "Carlos",
+                apellido: "Perales",
+                hobbie: "Aprender JS"
+            },
+            {
+                nombre: "Alexander",
+                apellido: "Beck",
+                hobbie: "Enseñar JS y hacer sufrir a los alumnos"
+            }
+        ]
+
+        */
+
+        console.log("Alumnos!!!!: ", alumnos);
+
+
+        // alumnos.push("Carlos");
+        // alumnos.push("Angélica");
+
+        console.log("Cantidad de alimnos: " + alumnos.length);
+
+        /*
+            ["Felipe", "Carlos", "Lorena"];
+            
+            i=1  = [0] "Felipe" --> cond i <= 4
+        i = 2 = [1] "Carlos" -- > cond i <= 4
+        i = 3 = [2] "Lorena" -- > cond i <= 4
+        i = 4 = [3] nada-- > --> cond i <= 4
+            */
+
+        // for(let i=1;i<=alumnos.length;i++){
+        //     console.log("Alumno (" + i + "): " + alumnos[i - 1]);
+        // }
+        // alumnos.length = 3
+
+        var c = 10;
+
+        function onLoadBody(){
+            var tbodyHtml = document.getElementById("idData").innerHTML;
+
+            for (let i = 0; i <= alumnos.length - 1; i++) {
+                console.log("Alumno 2 (" + i + "): " + alumnos[i]);
+                tbodyHtml = tbodyHtml + "<tr>" +
+                                            "<th scope='row'>" + i + "</th>" +
+                                            "<td>" + alumnos[i].nombre + "</td>" + 
+                                            "<td>" + alumnos[i].apellido + "</td>" +
+                                            "<td>" + alumnos[i].hobbie + "</td>" + 
+                                        "</tr>";
+            }
+            console.log(tbodyHtml);
+            document.getElementById("idData").innerHTML = tbodyHtml;
+            console.log("Let i fuera del for: " + c);
+        }
+    </script>
+</head>
+
+<body onload="onLoadBody()">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Hobbie</th>
+            </tr>
+        </thead>
+        <tbody id="idData">
+            
+        </tbody>
+    </table>
+</body>
+
+</html>
